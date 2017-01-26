@@ -46,6 +46,8 @@ $(document).ready(function () {
     var el = $(this).clone();
     el.appendTo($('#tab-content-comments'));
     el.find('ul.details li:not(:has(a[href^="/attachments"]))').remove();
+    // and remove empty ul
+    el.find('ul.details:not(:has(li))').remove();
   });
 
   if (has_timelog) {
